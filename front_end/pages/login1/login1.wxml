@@ -1,0 +1,6 @@
+<view class="button-sp-area" style="margin-top:100rpx" > 
+			<button class="weui-btn weui-btn_primary" bindtap="give" >提交</button>
+	</view>
+<view wx:for="{{play}}">
+<view>{{item.start}}</view>
+</view>

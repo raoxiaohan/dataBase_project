@@ -1,0 +1,33 @@
+<view class="cu-card case">
+  <view class="cu-item shadow">
+    <view class="image">
+      <image src="https://img0.baidu.com/it/u=1121377325,675930940&fm=253&fmt=auto&app=138&f=JPEG?w=250&h=180" mode="widthFix"></image>
+      <view class="cu-tag" style="background-color: #004198;color:white;" >会员卡</view>
+      <view class="cu-bar bg-shadeBottom">
+        <text class="text-cut">爱飞行普通会员卡</text>
+      </view>
+    </view>
+    <view class="cu-list menu-avatar">
+      <view class="cu-item">
+        <view class="cu-avatar round lg" style="background-image:url({{image}});"></view>
+        <view class="content flex-sub">
+          <view class="text-grey" style="margin-top: -0.5rem;">
+            <text style="font-size: medium;">
+              {{name1}}
+            </text>
+          </view>
+          <view class="text-gray text-sm flex justify-between">
+            积分共计{{credit}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+  <view class="cu-list grid col-3 no-border">
+    <view class="cu-item" wx:for="{{iconList}}" wx:key wx:if="{{index<gridCol*2}}">
+      <image src="{{item.icon}}" style="height: 2rem; width: 2rem;left: 2.3rem;" bindtap="{{item.nav}}"></image>
+      <text>{{item.name}}</text>
+    </view>
+  </view>

@@ -1,0 +1,150 @@
+page {
+    background: #f0eff5;
+    min-height: 100%
+}
+
+.wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: #fff;
+    margin-top: .8rem;
+    font-size: 32rpx;
+    position: relative;
+    width: 19rem;
+    margin-left: 0.5rem;
+}
+
+.wrap:after,
+.wrap:before {
+    content: '';
+    width: 200%;
+    height: 0;
+    -webkit-transform: scale(.5);
+    transform: scale(.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    position: absolute;
+    left: 0
+}
+
+.wrap:before {
+    top: 0;
+    border-top: 1px solid #c7c7c9
+}
+
+.wrap:after {
+    bottom: 0;
+    border-bottom: 1px solid #c7c7c9
+}
+
+.wrap-top {
+    width: 87%;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    position: relative
+}
+
+.wrap-top:after {
+    content: '';
+    width: 200%;
+    height: 0;
+    -webkit-transform: scale(.5);
+    transform: scale(.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-bottom: 1px solid #d6d6d6
+}
+
+.wrap-top .txt {
+    color: #525f76;
+    letter-spacing: .107rem;
+    line-height: 1.173rem;
+    display: block;
+    margin-bottom: .2rem;
+    font-size: 30rpx
+}
+
+.wrap-top .orderLi {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    /* -webkit-box-align: center;
+    -ms-flex-align: center; */
+    /* align-items: center; */
+}
+.number,
+
+.wrap-top .orderLi .time {
+    color: #a6b2bf;
+    
+}
+
+.paytxt {
+    color: #ff7f00;
+    margin-left: .267rem
+}
+
+.yetpay0 {
+    color: #fff;
+    margin-top: -2rem;
+    background-color: #525f76;
+    width: 3rem;
+    text-align: center;
+}
+.yetpay1 {
+    color: red;
+    margin-top: -2rem;
+    width: 3rem;
+    text-align: center;
+}
+.yetpay2 {
+    color: #fff;
+    margin-top: -2rem;
+    background-color: green;
+    width: 3rem;
+    text-align: center;
+}
+.wrap-btm {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 87%;
+    height: 2.213rem
+}
+.receive{
+   width: 3.5rem;
+   height: 2rem;
+   font-size: 0.8rem;
+   text-align: center;
+   margin-right: -1rem;
+   background-color: #004198;
+   color: white;
+}
+.cou_name{
+    
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+.num{
+    margin-top: 0.3rem;
+}

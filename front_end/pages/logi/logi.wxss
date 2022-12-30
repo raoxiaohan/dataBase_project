@@ -1,0 +1,19 @@
+
+image{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: -999;
+}
+.but{
+    height: 2.3rem;
+    width: 4rem;
+    margin-top: 140%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15%;
+}

@@ -1,0 +1,61 @@
+<view class="pannel flight">
+<view class="plane_list" wx:for="{{list}}" wx:for-index="index" wx:key="mId" wx:for-item="plane" >
+  <view data-index="{{index}}" >
+
+    <view class="goFlight">
+      <view class="flightDate">
+        <view>
+          <text style="margin-left: 0.9rem;">{{start}}</text>
+          <text class="time">{{plane.dep_time}}</text>
+        </view>
+        <view>
+          <text class="date">{{date}}</text>
+          <image class="flightPic" src="/images/flight.png"></image>
+        </view>
+        <view>
+          <text style="margin-left: 0.9rem;">{{end}}</text>
+          <text class="time">{{plane.arr_time}}</text>
+        </view>
+      </view>
+
+      <view class="flightLine airport">
+        <text>{{plane.dep_port}}</text>
+        <text class="small">直达</text>
+        <text>{{plane.arr_port}}</text>
+      </view>
+
+      <view class="flightLine flightDetail">
+        <view class="viewLeft">
+          <text class="flightName">{{plane.name}}</text>
+          <text class="flightType">{{plane.num}}</text>
+          <!-- <text class="vertical">|</text>
+          <text class="flightType"></text> -->
+        </view>
+        <view class="price" style="margin-right: 1rem;font-size: 1rem;color: rgb(255, 136, 0);">￥{{plane.price}}元起</view>
+        <button class="go" style="width: 3.5rem;" data-target="RadioModal" bindtap="book" data-order="{{plane.id}}">预订</button>
+      </view>
+      <view class="cu-modal {{modalName=='RadioModal'?'show':''}}" bindtap="hideModal">
+  <view class="cu-dialog">
+    <radio-group class="block">
+      <view class="cu-list menu text-left">
+        <view class="cu-item">
+          <label class="flex justify-between align-center flex-sub">
+            <view class="flex-sub">商务舱：{{plane.high}}</view>
+            <radio class="round" data-order="s"  bindtap="choose"></radio>
+          </label>
+        </view>
+        <view class="cu-item" >
+          <label class="flex justify-between align-center flex-sub" data-order="2">
+            <view class="flex-sub"  >经济舱：{{plane.low}}</view>
+            <radio class="round" data-order="j" bindtap="choose"></radio>
+          </label>
+        </view>
+      </view>
+    </radio-group>
+  </view>
+</view>
+      <view class="divLine"></view>
+    </view>
+  </view>
+</view>
+</view>

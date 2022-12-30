@@ -1,0 +1,11 @@
+<view class="container">
+    
+<!-- bindTap用于绑定事件 -->
+<button class="but" type="default"  bindtap="getUserInfor"> 登录</button>
+<image src="/images/firstplan.jpg"></image>
+    </view>
+
+<!-- 展示获取到的用户信息 -->
+<!--image  src="{{userinfor.avatarUrl}}" />
+<view> {{userinfor.nickName}}</view>
+<view> {{userinfor.city}}</view>

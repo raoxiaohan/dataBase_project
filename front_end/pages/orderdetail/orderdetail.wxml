@@ -1,0 +1,127 @@
+<import src="../component/toast.wxml"/>
+
+<template is="loading" data="{{ loading }}"/>
+
+<view  class="container">
+<!--头部-->
+   <view class="head">
+     <view class="inhead">
+       <view class="payment">
+           <view class="paymentLeft">
+             <image src="/images/clock.png" class="clock" style="margin-top: 0.1rem;"></image>
+              <view class="pay-r">{{status}}</view>
+           </view>
+           <view wx:if="{{status=='待支付'}}" catchtap="gotoPay" class="pay-l" >去支付</view>
+       </view>
+       <view class="time">
+            <text>订单：</text>
+            <text>{{orderId}}</text>
+       </view>
+       <view class="time">
+            <text>下单时间：</text>
+            <text>{{order_date}} {{order_time}}</text>
+       </view>
+    </view>
+   </view>
+<!--订单概述和金额-->
+ <view class="point">
+     <view class="inhead points">
+       <view class="points-t">
+          <text class="txt">{{orderModel.OrderTitle}}</text>
+       </view>
+       <view class="time jr">
+          <text>订单金额</text>
+          <text class="number"><text class="rmb">¥</text>{{price}}</text>
+       </view>
+       <view class="time timePay">
+          <text class="way">支付方式</text>
+          <image src="/images/icon64_appwx_logo.png" class="xxl"></image>
+          <text class="wx">微信支付</text>
+       </view>
+       <view class="cancelOrder">
+         <view class="cancel sure" wx:if="{{status=='待支付'}}" catchtap="cancelOrder">取消订单</view>
+         <view wx:else class="cancel">取消订单</view>
+       </view>
+    </view>
+    <image src="/images/huabian.jpg" class="bt-img"></image>
+</view>
+<view class="pannelMain">
+  <!--机票-->
+    <view class="pannel">
+      <view class="ticket ticket_color">
+          <image src="/images/jpp.jpg" class="ticket-l"></image>
+          <view class="ticket-r">机票</view>
+      </view>
+
+    <block >
+      <view class="goFlight">
+        <view class="flightLine flightDetail">
+          <image src="/images/logo.png"></image>
+          <text class="flightName">{{num}}<text class="flightNum"></text></text>
+        </view>
+
+        <view class="flightDate">
+          <view>
+            <text>{{dep_time}}</text>
+            <text class="times">{{dep_city}}</text>
+          </view>
+          <view>
+            <text class="date">{{dep_date}}</text>
+            <image src="/images/orderLine.png" class="orderLine"></image>
+          </view>
+          <view>
+            <text>{{arr_time}}</text>
+            <text class="times times_right">{{arr_city}}</text>
+          </view>
+        </view>
+        <view class="flightLine airport">
+          <text>{{dep_port}}</text>
+          <text>{{arr_port}}</text>
+        </view>
+      </view>
+    </block>
+    </view>
+
+
+  <!-- 联系人 -->
+    <view class="pannel">
+    <view class="ticket">
+        <image src="/images/person.png" class="ticket-l grogshop-img"></image>
+        <view class="ticket-r">联系人</view>
+    </view>
+    <view class="sum">
+        <text class="sum-l">联系人</text>
+        <view class="sum-r">{{contact_name}}</view>
+    </view>
+    <view class="sum">
+        <text class="sum-l">手机号</text>
+        <view class="sum-r">{{contact_phone}}</view>
+    </view>
+
+    </view>
+
+  <!--旅客信息-->
+    <view class="pannel">
+      <view class="ticket">
+        <image src="/images/tab2.png" class="ticket-l grogshop-img"></image>
+        <view class="ticket-r">旅客信息</view>
+    </view>
+      <block wx:for="{{pass_list}}" wx:key="{{index}}">
+        <view class="sum sum1">
+            <text class="sum-l">旅客</text>
+            <view class="sum-r">
+              <text>{{item.name}}</text>
+              <text class="add">身份证：{{item.cardnum}}</text>
+            </view>
+        </view>
+
+        <view class="sum">
+            <text class="sum-l">手机号</text>
+            <view class="sum-r">{{item.phone}}</view>
+        </view>
+      </block>
+    </view>
+
+  </view>
+
+</view>

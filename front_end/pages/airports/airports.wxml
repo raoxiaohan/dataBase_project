@@ -1,0 +1,49 @@
+<view class="cu-card case" style="height:20rem;margin-top: -0.2rem;width: 100%;">
+  <view class="cu-item shadow">
+    <view class="image">
+      <map id="myMap"
+   style="width:100%;height:220px;"
+   longitude="{{longitude}}"
+   latitude="{{latitude}}" >
+</map>
+      <view class="cu-bar bg-shadeBottom">
+        <picker class="picker" bindchange="PickerChange" value="{{index}}" range="{{picker}}" >
+    {{index?picker[index]:airport}}
+</picker>
+        
+      </view>
+    </view>
+    <view class="cu-list menu-avatar">
+      <view class="cu-item" style="margin-left: -3.5rem;">
+        <view class="content flex-sub">
+          <view class="text-grey" style="font-size: 0.8rem;margin-top: -0.5rem;">联系电话:{{phone}}</view>
+          <view class="text-gray text-sm flex justify-between" style="font-size: 0.8rem;margin-left: 6rem;">
+            当前天气：{{weather}}
+            <view class="text-gray text-sm" style="font-size: 0.8rem;">
+              当前温度:{{tem}}℃
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="cu-bar bg-white margin-top">
+  <view class="action">
+    <button bindtap="showModal" data-target="Modal" style="border: 2px solid #004198;font-size: 1rem;margin-top: -5rem;width:18rem;">
+    <text class="cuIcon-info"></text>防疫政策查询</button>
+  </view>
+</view>
+<view class="cu-modal {{modalName=='Modal'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">{{city}}防疫政策</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="padding-xl" style="margin-top: -1rem;">
+      {{low_in_desc}}
+    </view>
+  </view>
+</view>

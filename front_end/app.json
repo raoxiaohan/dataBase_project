@@ -1,0 +1,77 @@
+{
+    "pages": [
+        "pages/logi/logi",
+        "pages/index/index",
+        
+        
+        
+        "pages/findseats/findseats",
+        "pages/seats/seats",
+        "pages/airports/airports",
+        
+        "pages/more_cou/more_cou",
+        "pages/plan/plan",
+        "pages/coupon/coupon",
+        "pages/selectpassengers/selectpassengers",
+        "pages/order/order",
+        "pages/orderlist/orderlist",
+        
+        "pages/test/test",
+        "pages/productDetail/productDetail",
+        
+        "pages/talk/talk",
+        "pages/login1/login1",
+        "pages/hotelDetails/hotelDetails",
+        "pages/orderdetail/orderdetail",
+        "pages/airticket/airticket",
+        "pages/createTraveller/createTraveller",
+        "pages/hotelChange/hotelChange",
+        "pages/selectcity/selectcity",
+        "pages/selectStartCity/selectStartCity",
+        "pages/redact/redact",
+        "pages/verySorry/verySorry",
+        "pages/guarantee/guarantee",
+        "pages/tool/tool",
+        "pages/my/my"
+        
+        
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#004198",
+        "navigationBarTitleText": "爱飞行",
+        "navigationBarTextStyle": "white"
+    },
+    "tabBar": {
+        "selectedColor": "#1296db",
+        "backgroundColor": "#fff",
+        "borderStyle": "black",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "images/first.png",
+                "selectedIconPath": "images/first1.png"
+            },
+            {
+                "pagePath": "pages/tool/tool",
+                "text": "服务大厅",
+                "iconPath": "images/tool.png",
+                "selectedIconPath": "images/tool1.png"
+            },
+            {
+                "pagePath": "pages/my/my",
+                "text": "我的",
+                "iconPath": "images/my.png",
+                "selectedIconPath": "images/my1.png"
+            }
+        ]
+    },
+    "networkTimeout": {
+        "request": 120000
+    },
+    "permission": {
+        "scope.userLocation": { "desc": "你的位置信息将用于小程序位置接口的效果展示" }
+    },
+    "sitemapLocation": "sitemap.json"
+}

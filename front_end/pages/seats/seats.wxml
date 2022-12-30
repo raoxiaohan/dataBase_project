@@ -1,0 +1,10 @@
+<view class="page">
+<!-- <position-toast wx:if="isPositionPermited"/>
+  <banner-swiper pics="{{pics}}"/>
+  <block wx:for="{{menus}}" wx:key="index">
+    <menus-item menu="{{item}}"/>
+  </block> -->
+  <seatList seatings="{{seatings}}" hallNumber="{{hallNumber}}"/>
+</view>
+
+<button class="certain" bindtap="certain">确定选座</button>

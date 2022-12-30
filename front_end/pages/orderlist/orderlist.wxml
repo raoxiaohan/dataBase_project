@@ -1,0 +1,49 @@
+<scroll-view scroll-y="true" scroll-y="false" class="container" bindscrolltolower="loadMore">
+    <block wx:for="{{orderList}}" wx:key="{{index}}">
+      <view class="wrap" data-order="{{item.order_id}}" bindtap="tapdetail">
+          <view class="wrap-top">
+              <view class="orderLi">
+                <view class="orderMin">
+                  <view class="plane">
+                        <text>{{item.plane}}</text>
+                    </view>
+                    <view class="city" style="font-size: 1rem;margin-top: 0.8rem;">
+                        <text>{{item.dep_city}} </text>
+                        <text class="arrow"></text>
+                        <text> {{item.arr_city}}</text>
+                    </view>
+                    <view class="fly_time" style="margin-top: 0.3rem;">
+                      <text>{{item.dep_date}} {{item.dep_time}}-{{item.arr_time}}</text>
+                    </view>
+                </view>
+                <view class="number yetpay0" wx:if="{{item.status==0}}">
+                已取消</view>
+                <view class="number yetpay1" wx:if="{{item.status==1}}">
+                待支付</view>
+                <view class="number yetpay2" wx:if="{{item.status==2}}">
+                已支付</view>
+            </view> 
+          </view>
+
+          <view class="wrap-btm">
+              <view class="number">
+                  <text>单号：</text>
+                  <text>{{item.order_id}}</text>
+              </view>
+              <view class="number">
+                  <text>订单金额</text>
+                  <text class="paytxt">¥{{item.price}}</text>
+              </view>
+          </view>
+      </view>
+    </block>
+
+    <view wx:if="{{login}}" class="tips">
+      <view wx:if="{{hasMore}}">
+      <text>没有更多内容了</text>
+    </view>
+    </view>
+    <view wx:else class="tips">
+      <text>抱歉，您登陆失败！</text>
+    </view>
+</scroll-view>

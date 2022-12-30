@@ -1,0 +1,93 @@
+<block wx:for="{{orderList}}" wx:key="index">
+      <view class="wrap" data-order="{{item.order_id}}">
+          <view class="wrap-top">
+              <view class="orderLi">
+                <view class="orderMin">
+                  <view class="plane">
+                        <text>航班编号：{{item.plane}}</text>
+                    </view>
+                    <view class="city" style="font-size: 1.3rem;margin-top: 0.3rem;margin-left: 4.5rem;">
+                        <text>{{item.dep_city}} </text>
+                        <text class="arrow"></text>
+                        <text> {{item.arr_city}}</text>
+                    </view>
+                    <view class="fly_time" style="margin-top: 0.5rem;">
+                      <text>时间：{{item.dep_date}} {{item.dep_time}}-{{item.arr_time}}</text>
+                    </view>
+                    <view class="number" wx:for="{{item.pass_name}}" wx:for-item="p" wx:key="index">
+                  <text>{{p.p_name}}:{{p.p_seat}}</text>
+              </view>
+                </view>
+            </view> 
+          </view>
+
+          <view class="wrap-btm">
+              <view class="number">
+                  <text>单号：</text>
+                  <text>{{item.order_id}}</text>
+              </view>
+          </view>
+      </view>
+    </block>
+    
+    <view class="ct-tab">
+<scroll-view>
+ <!-- <view class="tab-title">
+   <view class="{{0==currentIndex?'tab-title-selected':'tab-title-sel'}}" bindtap="tabChange" data-currentIndex="0">
+    <text>必玩</text>
+    <hr class="tab-sel-line"/>
+   </view>
+   <view class="{{1==currentIndex?'tab-title-selected':'tab-title-sel'}}" bindtap="tabChange" data-currentIndex="1">
+    <text>必吃</text>
+    <hr class="tab-sel-line"/>
+   </view>
+   <view class="{{2==currentIndex?'tab-title-selected':'tab-title-sel'}}" bindtap="tabChange" data-currentIndex="2">
+    <text>必逛</text>
+    <hr class="tab-sel-line"/>
+   </view>
+ </view> -->
+
+<!-- <swiper class='swiper' bindchange='swiperchange' current='{{currentIndex}}'>
+  <swiper-item class="ct-swiper-item">
+    <view class="tab-content" > -->
+    
+      <view class="cu-card case" >
+        <block wx:for="{{places}}" wx:key="{{index}}">
+  <view class="cu-item shadow">
+    <view class="image">
+      <image src="{{item.image}}" mode="widthFix"></image>
+      <view class="cu-bar bg-shadeBottom">
+        <text class="text-cut">{{item.name}}</text>
+      </view>
+    </view>
+    <view class="cu-list menu-avatar">
+      <view class="cu-item">
+        <view class="content flex-sub" style="left: 1rem;">
+          <view class="text-grey" style="margin-top: -0.8rem;">
+            <text style="font-size: small;">
+              {{item.text}}
+            </text>
+          </view>
+          <view class="text-gray text-sm flex justify-between">
+            {{item.comment[0]}}分 {{item.comment[1]}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</block>
+</view>
+
+
+    <!-- </view>
+  </swiper-item>
+  <swiper-item  class="ct-swiper-item">
+    <view  class="tab-content">tab2</view>
+  </swiper-item>
+  <swiper-item  class="ct-swiper-item">
+    <view  class="tab-content">tab3</view>
+  </swiper-item>
+</swiper> -->
+
+</scroll-view>
+</view>

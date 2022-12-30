@@ -1,0 +1,22 @@
+<block wx:for="{{my_coupons}}" wx:key="{{index}}">
+      <view class="wrap" data-order="{{item.id}}" bindtap="choose">
+      
+          <view class="wrap-top">
+              <view class="orderLi" >
+                <image src="/images/{{item.price}}.png" style="height: 5rem;width: 5rem;left: -1rem;">
+      </image>
+                <view class="orderMin" style="margin-left: -9rem;">
+                  <view class="plane" >
+                        <text>优惠券名称：{{item.name}}</text>
+                    </view>
+                    <view class="fly_time" style="margin-top: 0.5rem;">
+                      <text>有效时间：{{item.start_time}} - {{item.end_time}}</text>
+                    </view>
+                </view>
+            </view> 
+          </view>
+      </view>
+    </block>
+  <button class="more" bindtap="more">
+  <image src="/images/其他订单.png" style="width: 2rem;height: 1.8rem;top: 0.5rem;"></image>
+  领取更多优惠券</button>

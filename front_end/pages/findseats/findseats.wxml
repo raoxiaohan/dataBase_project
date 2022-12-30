@@ -1,0 +1,44 @@
+<view wx:if="{{hasMore}}">
+<view class="title" style="font-size: 0.8rem;text-align: center;margin-top: 0.5rem;color: gray;"> 
+请选择要值机选座的航班及乘客</view>
+<block wx:for="{{orderList}}" wx:key="index">
+      <view class="wrap" data-order="{{item.order_id}}" bindtap="choose">
+          <view class="wrap-top">
+              <view class="orderLi">
+                <view class="orderMin">
+                  <view class="plane">
+                        <text>航班编号：{{item.plane}}</text>
+                    </view>
+                    <view class="city" style="font-size: 1.3rem;margin-top: 0.3rem;margin-left: 4.5rem;">
+                        <text>{{item.dep_city}} </text>
+                        <text class="arrow"></text>
+                        <text> {{item.arr_city}}</text>
+                    </view>
+                    <view class="fly_time" style="margin-top: 0.5rem;">
+                      <text>时间：{{item.dep_date}} {{item.dep_time}}-{{item.arr_time}}</text>
+                    </view>
+                </view>
+            </view> 
+          </view>
+
+          <view class="wrap-btm">
+              <view class="number">
+                  <text>单号：</text>
+                  <text>{{item.order_id}}</text>
+              </view>
+          </view>
+      </view>
+      <view class="cu-list menu card-menu margin-top" wx:for="{{item.pass_name}}" wx:for-item="p" wx:key="index">
+          <view class="cu-item arrow">
+      <navigator class="content" hover-class="none" url="../seats/seats?pid={{p.pid}}&oid={{item.order_id}}" open-type="navigate">
+        <image src="/images/person.png"></image>
+        <text class="text-grey">{{p.p_name}}</text>
+      </navigator>
+    </view>
+    </view>
+    </block>
+</view>
+<view wx:else>
+    <view class="title" style="font-size: 0.8rem;text-align: center;margin-top: 0.5rem;color: gray;"> 
+您暂时没有未值机的订单</view>
+</view>
